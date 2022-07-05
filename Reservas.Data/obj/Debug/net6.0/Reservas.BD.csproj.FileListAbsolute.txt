@@ -1,0 +1,14 @@
+C:\Users\palos\source\repos\Reservas\Reservas.Data\bin\Debug\net6.0\Reservas.BD.deps.json
+C:\Users\palos\source\repos\Reservas\Reservas.Data\bin\Debug\net6.0\Reservas.BD.runtimeconfig.json
+C:\Users\palos\source\repos\Reservas\Reservas.Data\bin\Debug\net6.0\Reservas.BD.dll
+C:\Users\palos\source\repos\Reservas\Reservas.Data\bin\Debug\net6.0\Reservas.BD.pdb
+C:\Users\palos\source\repos\Reservas\Reservas.Data\obj\Debug\net6.0\Reservas.BD.csproj.AssemblyReference.cache
+C:\Users\palos\source\repos\Reservas\Reservas.Data\obj\Debug\net6.0\Reservas.BD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\palos\source\repos\Reservas\Reservas.Data\obj\Debug\net6.0\Reservas.BD.AssemblyInfoInputs.cache
+C:\Users\palos\source\repos\Reservas\Reservas.Data\obj\Debug\net6.0\Reservas.BD.AssemblyInfo.cs
+C:\Users\palos\source\repos\Reservas\Reservas.Data\obj\Debug\net6.0\Reservas.BD.csproj.CoreCompileInputs.cache
+C:\Users\palos\source\repos\Reservas\Reservas.Data\obj\Debug\net6.0\Reservas.BD.dll
+C:\Users\palos\source\repos\Reservas\Reservas.Data\obj\Debug\net6.0\refint\Reservas.BD.dll
+C:\Users\palos\source\repos\Reservas\Reservas.Data\obj\Debug\net6.0\Reservas.BD.pdb
+C:\Users\palos\source\repos\Reservas\Reservas.Data\obj\Debug\net6.0\Reservas.BD.genruntimeconfig.cache
+C:\Users\palos\source\repos\Reservas\Reservas.Data\obj\Debug\net6.0\ref\Reservas.BD.dll
