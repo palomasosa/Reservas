@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace Reservas.BD.Data.Entidades
 {
-    internal class Reserva
-    {   
+    [Index(nameof(ID), Name = "ReservaID_UQ", IsUnique = true)]
+    public class Reserva
+    {
+        public int ID { get; set; }
         public string NombreAlojamiento { get; set; }  
         public string DireccionAlojamiento { get; set; }
         public int horarioCheckIn { get; set; }
@@ -20,11 +23,12 @@ namespace Reservas.BD.Data.Entidades
         public int montoDeposito { get; set; }
         public int saldoRestante { get; set; }
         public int precioTotal { get; set; }
+
+        //N
+        public int HuespedId { get; set; }
+        public int RespReservaId { get; set; }
+        public Huesped Huesped { get; set; }
+        public RespReserva RespReserva { get; set; }
     }
 }
 
-//Las reservas: Nombre y la dirección del establecimiento en el cual se alojarán los
-//huéspedes, horario de check-in y check-out, el total de pasajeros, las fechas
-//previstas de entrada y salida, total de noches, la fecha del depósito de la reserva,
-//el monto en concepto de seña, el saldo restante a pagar y el precio total de la
-//tarifa.

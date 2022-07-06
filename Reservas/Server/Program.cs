@@ -10,11 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
 
-var app = builder.Build();
 // conexion 
 var conn = builder.Configuration.GetConnectionString("con");
 builder.Services.AddDbContext<BDContext>(opciones => opciones.UseSqlServer(conn));
 
+var app = builder.Build(); // PREGUNTAR QUE HACE
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
