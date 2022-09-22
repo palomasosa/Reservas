@@ -7,12 +7,9 @@ using System.Threading.Tasks;
 
 namespace Reservas.BD.Data.Entidades
 {
-    [Index(nameof(ID), Name = "ReservaID_UQ", IsUnique = true)]
-    public class Reserva
+    [Index(nameof(Id), Name = "ReservaID_UQ", IsUnique = true)]
+    public class Reserva : EntityBase
     {
-        public int ID { get; set; }
-        public string NombreAlojamiento { get; set; }  
-        public string DireccionAlojamiento { get; set; }
         public int horarioCheckIn { get; set; }
         public int horarioCheckOut { get; set; }
         public int totalPasajeros { get; set; }
@@ -29,6 +26,8 @@ namespace Reservas.BD.Data.Entidades
         public int RespReservaId { get; set; }
         public Huesped Huesped { get; set; }
         public RespReserva RespReserva { get; set; }
+        public int AlojamientoId { get; set; }
+        public Alojamiento Alojamiento { get; set; }
     }
 }
 

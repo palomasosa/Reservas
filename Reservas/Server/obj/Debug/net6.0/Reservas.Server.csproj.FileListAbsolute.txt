@@ -37,7 +37,11 @@ C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Microsoft.
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Microsoft.JSInterop.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Microsoft.JSInterop.WebAssembly.dll
+C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\System.Drawing.Common.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
@@ -69,6 +73,7 @@ C:\Users\palos\source\repos\Reservas\Reservas\Server\obj\Debug\net6.0\Reservas.S
 C:\Users\palos\source\repos\Reservas\Reservas\Server\obj\Debug\net6.0\Reservas.Server.AssemblyInfoInputs.cache
 C:\Users\palos\source\repos\Reservas\Reservas\Server\obj\Debug\net6.0\Reservas.Server.AssemblyInfo.cs
 C:\Users\palos\source\repos\Reservas\Reservas\Server\obj\Debug\net6.0\Reservas.Server.csproj.CoreCompileInputs.cache
+C:\Users\palos\source\repos\Reservas\Reservas\Server\obj\Debug\net6.0\Reservas.Server.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\palos\source\repos\Reservas\Reservas\Server\obj\Debug\net6.0\Reservas.Server.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\palos\source\repos\Reservas\Reservas\Server\obj\Debug\net6.0\Reservas.Server.RazorAssemblyInfo.cache
 C:\Users\palos\source\repos\Reservas\Reservas\Server\obj\Debug\net6.0\Reservas.Server.RazorAssemblyInfo.cs

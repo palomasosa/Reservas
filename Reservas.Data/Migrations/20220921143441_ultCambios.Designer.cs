@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Reservas.BD.Data;
 
@@ -11,9 +12,10 @@ using Reservas.BD.Data;
 namespace Reservas.BD.Migrations
 {
     [DbContext(typeof(BDContext))]
-    partial class BDContextModelSnapshot : ModelSnapshot
+    [Migration("20220921143441_ultCambios")]
+    partial class ultCambios
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,10 +54,8 @@ namespace Reservas.BD.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("DNI")
-                        .IsRequired()
-                        .HasMaxLength(8)
-                        .HasColumnType("nvarchar(8)");
+                    b.Property<int>("DNI")
+                        .HasColumnType("int");
 
                     b.Property<string>("Domicilio")
                         .HasColumnType("nvarchar(max)");
@@ -91,8 +91,8 @@ namespace Reservas.BD.Migrations
                     b.Property<string>("Nombre")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("Telefono")
-                        .HasColumnType("bigint");
+                    b.Property<int>("Telefono")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -107,7 +107,7 @@ namespace Reservas.BD.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int>("AlojamientoId")
+                    b.Property<int?>("AlojamientoId")
                         .HasColumnType("int");
 
                     b.Property<int>("HuespedId")
@@ -193,11 +193,10 @@ namespace Reservas.BD.Migrations
 
             modelBuilder.Entity("Reservas.BD.Data.Entidades.Reserva", b =>
                 {
-                    b.HasOne("Reservas.BD.Data.Entidades.Alojamiento", "Alojamiento")
+                    b.HasOne("Reservas.BD.Data.Entidades.Alojamiento", null)
                         .WithMany("Reservas")
                         .HasForeignKey("AlojamientoId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Reservas.BD.Data.Entidades.Huesped", "Huesped")
                         .WithMany("reservas")
@@ -210,8 +209,6 @@ namespace Reservas.BD.Migrations
                         .HasForeignKey("RespReservaId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-
-                    b.Navigation("Alojamiento");
 
                     b.Navigation("Huesped");
 
