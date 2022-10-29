@@ -1,0 +1,127 @@
+﻿@page "/Reservas/Editar/{reservaId:int}/{huespedId:int}/{personaId:int}"
+@inject IHttpService http
+@inject NavigationManager navigationManager
+
+<h3>Editar reserva</h3>
+
+<FormReserva 
+    reserva="reserva"
+    persona="persona"
+    huesped="huesped"
+    onCancel="Cancelar" onValidSubmit="Grabar"
+/>
+
+@code 
+{
+    private Reserva reserva = new Reserva();
+    private Persona persona = new Persona();
+    private Huesped huesped = new Huesped();
+
+
+    [Parameter] public int reservaId { get; set; }
+    [Parameter] public int personaId { get; set; }
+    [Parameter] public int huespedId { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        await MostrarR();
+        await MostrarP();
+        await MostrarH();
+    }
+
+    private async Task MostrarR()
+    {
+        var respuesta = await http.Get<Reserva>($"api/Reservas/{reservaId}");
+        if(respuesta.Error)
+        {
+            var body = respuesta.HttpResponseMessage;
+        }
+        else
+        {
+            reserva = respuesta.Respuesta;
+        }
+    }
+
+    private async Task MostrarP()
+    {
+        var respuesta = await http.Get<Persona>($"api/Personas/{personaId}");
+        if(respuesta.Error)
+        {
+            var body = respuesta.HttpResponseMessage;
+        }
+        else
+        {
+            persona = respuesta.Respuesta;
+        }
+    }
+
+    private async Task MostrarH()
+    {
+        var respuesta = await http.Get<Huesped>($"api/Huespedes/{huespedId}");
+        if(respuesta.Error)
+        {
+            var body = respuesta.HttpResponseMessage;
+        }
+        else
+        {
+            huesped = respuesta.Respuesta;
+        }
+    }
+
+    private async void Grabar()
+    {
+        try
+        {
+            var httpRespuesta = await http.Put<Persona>($"api/Personas/{personaId}", persona);
+            if (httpRespuesta.Error)
+            {
+                var body = httpRespuesta.HttpResponseMessage;
+
+            }
+            else
+            {
+                huesped.PersonaId = personaId;
+                var httpRespuestaHuesped = await http.Put<Huesped>($"api/Huespedes/{huespedId}", huesped);
+                if (httpRespuestaHuesped.Error)
+                {
+                    var body = httpRespuestaHuesped.HttpResponseMessage;
+                    Console.Write(httpRespuestaHuesped.HttpResponseMessage);
+
+                }
+                else
+                {
+
+                    int numeroNoches = System.Convert.ToInt32((reserva.fechaSalida - reserva.fechaEntrada).Days);
+                    int prcTotal = reserva.montoDeposito + reserva.saldoRestante;
+
+                    reserva.totalNoches = numeroNoches;
+                    reserva.precioTotal = prcTotal;
+                    reserva.HuespedId = huespedId;
+
+                    var httpRespuestaReserva = await http.Put<Reserva>($"api/Reservas/{reservaId}", reserva);
+                    if (httpRespuestaReserva.Error)
+                    {
+                        var body = httpRespuestaReserva.HttpResponseMessage;
+                        Console.Write(httpRespuestaReserva.HttpResponseMessage);
+
+                    }
+
+
+                    navigationManager.NavigateTo("/Reservas");
+                }
+            }
+        }
+        catch(Exception e)
+        {
+            throw e;
+        }
+
+
+    }
+
+    private void Cancelar()
+    {
+        navigationManager.NavigateTo("/Reservas");
+
+    }
+}

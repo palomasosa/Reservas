@@ -52,6 +52,10 @@ namespace Reservas.Server.Controllers
         [HttpPut("{id:int}")]
         public ActionResult Put(int id, [FromBody] Alojamiento alojamiento)
         {
+            //if (id != alojamiento.Id)
+            //{
+            //    return BadRequest("Datos incorrectos");
+            //}
             var alojamientoSolicitada = context.Alojamientos
                 .Where(x => x.Id == id).FirstOrDefault();
             if (alojamientoSolicitada == null)

@@ -50,12 +50,17 @@ namespace Reservas.Server.Controllers
         [HttpPut("{id:int}")]
         public ActionResult Put(int id, [FromBody] Persona persona)
         {
+            //if (id != persona.Id)
+            //{
+            //    return BadRequest("Datos incorrectos");
+            //}
             var personaSolicitada = context.Personas
                 .Where(x => x.Id == id).FirstOrDefault();
             if (personaSolicitada == null)
             {
                 return NotFound("No se encontró la persona a modificar");
             }
+            personaSolicitada.Nombre = persona.Nombre;
             personaSolicitada.Telefono = persona.Telefono; 
             personaSolicitada.Apellido = persona.Apellido;
             personaSolicitada.Mail = persona.Mail;

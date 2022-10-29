@@ -1,0 +1,47 @@
+﻿@page "/Alojamientos/Editar/{alojamientoId:int}"
+@inject IHttpService http
+@inject NavigationManager navigationManager
+
+<h3>Editar alojamiento</h3>
+
+<FormAlojamiento alojamiento="alojamiento" onCancel="Cancelar" onValidSubmit="Grabar" />
+
+@code 
+{
+    private Alojamiento alojamiento  = new Alojamiento();
+    [Parameter] public int alojamientoId { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        await Mostrar();
+    }
+
+    private async Task Mostrar()
+    {
+        var respuesta = await http.Get<Alojamiento>($"api/Alojamientos/{alojamientoId}");
+        if(respuesta.Error)
+        {
+            var body = respuesta.HttpResponseMessage;
+        }
+        else
+        {
+            alojamiento = respuesta.Respuesta;
+        }
+    }
+
+    private async void Grabar()
+    {
+        var respuesta = await http.Put<Alojamiento>($"api/Alojamientos/{alojamientoId}",
+                                                     alojamiento);
+        if (respuesta.Error)
+        {
+            var body = respuesta.HttpResponseMessage;
+        }
+        navigationManager.NavigateTo("/Alojamientos");
+    }
+
+    private void Cancelar()
+    {
+        navigationManager.NavigateTo("/Alojamientos");
+    }
+}

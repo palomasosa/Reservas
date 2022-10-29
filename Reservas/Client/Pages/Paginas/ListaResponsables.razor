@@ -1,0 +1,111 @@
+﻿@page "/Responsables"
+@inject IHttpService http
+
+<h2>Responsables de reserva</h2>
+
+<a class="btn btn-primary" href="Responsables/Crear" style="margin-bottom: 1rem;">Nuevo responsable</a>
+
+
+
+    @if (respReservas == null)
+    {
+        <tr>Cargando...</tr>
+    }
+    else if(respReservas.Count == 0)
+    {
+        <tr>No hay responsables cargados</tr>
+    }
+    else
+    {
+        @foreach (var item in respReservas)
+        {
+            <div class="card" style="width: 18rem; margin-bottom:1rem;">
+            <ul style="padding-left:0rem;">
+                <li class="list-group-item" style="display:flex; justify-content:center;">@item.Persona.Nombre</li>
+                <li class="list-group-item" style="display:flex; justify-content:center;">@item.Persona.Apellido</li>
+                <li class="list-group-item" style="display:flex; justify-content:center;">@item.Persona.Mail</li>
+                <li class="list-group-item" style="display:flex; justify-content:center;">@item.Persona.Telefono</li>
+
+                    <div style="display:flex; justify-content:space-evenly;">
+                    <a class="btn btn-warning"
+                       href="Responsables/Editar/@item.PersonaId" style="width:40%; margin-top:1rem;">
+                        Editar
+                    </a>
+
+
+                    <button class="btn btn-danger"
+                            @onclick="()=>Eliminar(item)" style="width:40%; margin-top:1rem;">
+                        Borrar
+                    </button>
+                    </div>
+            </ul>
+            </div>
+        }
+    }
+
+<Confirmacion @ref="confirmacion"
+              verCancelar="true"
+              verOk="true"
+              textOk="Ok"
+              Titulo="Borrar especialidad"
+              onCancel="Cancelar"
+              onConfirm="Borrar">
+              <div>
+                  Está por borrar el responsable: @RespReservaBorrar.Id
+                  <br />
+                  ¿Está seguro que desea continuar?
+              </div>
+</Confirmacion>
+
+
+@code {
+    List<RespReserva> respReservas;
+    Confirmacion confirmacion;
+    RespReserva RespReservaBorrar;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        await Leer();
+    }
+
+    private async Task Leer()
+    {
+        var respuesta = await http.Get<List<RespReserva>>("api/RespReservas");
+        if(!respuesta.Error)
+        {
+            respReservas = respuesta.Respuesta;
+        }
+    }
+
+    private void Eliminar(RespReserva respReservaBorrar)
+    {
+        RespReservaBorrar = respReservaBorrar;
+        confirmacion.Ver();
+    }
+
+    private void Cancelar()
+    {
+        confirmacion.Ocultar();
+        RespReservaBorrar = null;
+    }
+
+    private async Task Borrar()
+    {
+        var respuesta = await http.Delete($"api/RespReservas/{RespReservaBorrar.Id}");
+        if(respuesta.Error)
+        {
+            var body = "Error";
+        }
+
+        var respuestaPers = await http.Delete($"api/Personas/{RespReservaBorrar.PersonaId}");
+        if (respuestaPers.Error)
+        {
+            var body = "Error";
+        }
+
+        Cancelar();
+        await Leer();
+    }
+}

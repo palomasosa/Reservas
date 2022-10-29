@@ -1,0 +1,290 @@
+﻿@page "/Huespedes/Reservas/{huespedId:int}"
+@inject IHttpService http
+
+<h3 style="text-align:center;">Reservas del huesped @huesped.Persona.Nombre @huesped.Persona.Apellido</h3>
+
+
+    @if(reservasHuesped == null)
+    {
+        <h4 style="text-align: center;">Cargando...</h4>
+    } 
+    else if (reservasHuesped.Count == 0)
+    {
+    <h4 style="text-align:center;">No hay reservas cargadas al sistema</h4>
+    }
+else
+{
+    <div class="card-group"> 
+    @foreach (var item in reservasHuesped)
+    {
+        <div class="card" style="width: 18rem; margin: 1rem;">
+             <div class="card-header">
+                Alojamiento
+             </div>
+             <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Nombre de alojamiento: @item.Alojamiento.NombreAlojamiento</li>
+                  <li class="list-group-item">Direccion de alojamiento: @item.Alojamiento.DireccionAlojamiento</li>                        
+             </ul>
+
+
+
+
+            <div class="card-header">
+                Responsable de reserva
+            </div>
+             <ul class="list-group list-group-flush">
+                @foreach(var itemResp in respReservas)
+                    {
+                        @if(itemResp.Id == item.RespReservaId)
+                        {
+                            @foreach(var itemPers in personas)
+                            {
+                                @if(itemPers.Id == itemResp.PersonaId)
+                                    {
+                                        <li class="list-group-item">Nombre: @itemPers.Nombre</li>
+                                        <li class="list-group-item">Apellido: @itemPers.Apellido</li>
+                                        <li class="list-group-item">Telefono: @itemPers.Telefono</li>
+                                        <li class="list-group-item">Mail: @itemPers.Mail</li>
+                                    }
+                            }
+                        }
+                    }
+             </ul>
+
+
+
+            <div class="card-header">
+                Huesped
+            </div>
+             <ul class="list-group list-group-flush">
+                @foreach(var itemHuesped in huespedes)
+                    {
+                        @if(itemHuesped.Id == item.HuespedId)
+                        {
+                            IDhuesped = item.HuespedId;
+                            huespedBr = itemHuesped;
+                            @foreach(var itemPers in personas)
+                            {
+                                @if(itemPers.Id == itemHuesped.PersonaId)
+                                    {
+                                        <li class="list-group-item">Nombre: @itemPers.Nombre</li>
+                                        <li class="list-group-item">Apellido: @itemPers.Apellido</li>
+                                        <li class="list-group-item">Telefono: @itemPers.Telefono</li>
+                                        <li class="list-group-item">Mail: @itemPers.Mail</li>
+                                        <li class="list-group-item">DNI: @itemHuesped.DNI</li>
+                                        <li class="list-group-item">Nacionalidad: @itemHuesped.Nacionalidad</li>
+                                    <li class="list-group-item">Domicilio: @itemHuesped.Domicilio</li>
+                                    IDpersona = itemHuesped.PersonaId;
+                                    personaBr = itemPers;
+                                }
+                            }
+                        }
+                    }
+             </ul>
+
+             <div class="card-header">
+                Reserva
+             </div>
+             <ul class="list-group list-group-flush">
+
+                <li class="list-group-item">Fecha de entrada: @item.fechaEntrada.ToShortDateString()</li>
+                <li class="list-group-item">Fecha de salida: @item.fechaSalida.ToShortDateString()</li>
+                <li class="list-group-item">Total de noches: @item.totalNoches</li>
+                <li class="list-group-item">Total de pasajeros: @item.totalPasajeros</li>
+                <li class="list-group-item">Fecha de depósito: @item.fechaDeposito.ToShortDateString()</li>
+                <li class="list-group-item">Monto de depósito: @item.montoDeposito</li>
+                <li class="list-group-item">Saldo restante: @item.saldoRestante</li>
+                <li class="list-group-item">Precio total: @item.precioTotal</li>
+                <li class="list-group-item">Horario de check-in: @item.horarioCheckIn</li>
+                <li class="list-group-item">Horario de check-out: @item.horarioCheckOut</li>
+             </ul>
+             <br/>
+             <a class="btn btn-warning"
+                 href="Reservas/Editar/@item.Id/@IDhuesped/@IDpersona">
+                        Editar
+             </a>
+             <br/>
+             <button class="btn btn-danger"
+                 @onclick="()=>Eliminar(item, personaBr, huespedBr)">
+                 Borrar
+              </button>
+        </div>
+        <br/>
+    }
+    </div>
+
+}
+<Confirmacion @ref="confirmacion"
+              verCancelar="true"
+              verOk="true"
+              textOk="Ok"
+              Titulo="Borrar especialidad"
+              onCancel="Cancelar"
+              onConfirm="Borrar">
+              <div>
+                  Está por borrar la reserva de ID @ReservaBorrar.Id
+                  <br />
+                  ¿Está seguro que desea continuar?
+              </div>
+</Confirmacion>
+
+
+@code
+{
+    private Huesped huesped = new Huesped();
+    [Parameter] public int huespedId { get; set; }
+    List<Reserva> reservasHuesped = new List<Reserva>();
+
+    List<Reserva> reservas;
+    List<Persona> personas;
+    List<Huesped> huespedes;
+    List<RespReserva> respReservas;
+    List<Alojamiento> alojamientos;
+    Reserva ReservaBorrar;
+    Persona PersonaBorrar;
+    Huesped HuespedBorrar;
+
+    Persona personaBr;
+    Huesped huespedBr;
+    Confirmacion confirmacion;
+
+    int IDpersona;
+    int IDhuesped;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        base.OnInitializedAsync();
+        await Leer();
+        await LeerAlojamiento();
+        await LeerHuesped();
+        await LeerPersona();
+        await LeerRespRes();
+
+    }
+    private async Task Leer()
+    {
+        //var respuestaLeerHuesped = await http.Get<List<Huesped>>("api/Huespedes");
+        //if (!respuestaLeerHuesped.Error)
+        //{
+        //    huespedes = respuestaLeerHuesped.Respuesta; 
+        //}
+
+        var respuesta = await http.Get<List<Reserva>>("api/Reservas");
+        if (!respuesta.Error)
+        {
+            reservas = respuesta.Respuesta;
+            foreach (var item in reservas)
+            {
+                if (item.HuespedId == huespedId)
+                {
+                    reservasHuesped.Add(item);
+                }
+            }
+        }
+    }
+
+    private async Task LeerPersona()
+    {
+        var respuesta = await http.Get<List<Persona>>("api/Personas");
+        if (!respuesta.Error)
+        {
+            personas = respuesta.Respuesta;
+        }
+    }
+
+    private async Task LeerHuesped()
+    {
+        var respuesta = await http.Get<List<Huesped>>("api/Huespedes");
+        if (!respuesta.Error)
+        {
+            huespedes = respuesta.Respuesta;
+            foreach (var item in huespedes)
+            {
+                if (item.Id == huespedId)
+                {
+                    huesped = item;
+                }
+            }
+        }    
+
+    }
+
+    private async Task LeerRespRes()
+    {
+        var respuesta = await http.Get<List<RespReserva>>("api/RespReservas");
+        if (!respuesta.Error)
+        {
+            respReservas = respuesta.Respuesta;
+        }
+    }
+
+
+    private async Task LeerAlojamiento()
+    {
+        var respuesta = await http.Get<List<Alojamiento>>("api/Alojamientos");
+        if (!respuesta.Error)
+        {
+            alojamientos = respuesta.Respuesta;
+        }
+    }
+
+
+    private void Eliminar(Reserva reservaBorrar, Persona personaBorrar, Huesped huespedBorrar)
+    {
+        int cantReservasHuesped = 0;
+        foreach (var item in reservas)
+        {
+            if(item.HuespedId == huespedBorrar.Id)
+            {
+                cantReservasHuesped++;
+            }
+        }
+        if (cantReservasHuesped == 1)
+        {
+            PersonaBorrar = personaBorrar;
+            HuespedBorrar = huespedBorrar;
+        }
+        ReservaBorrar = reservaBorrar;
+        confirmacion.Ver();
+    }
+    private void Cancelar()
+    {
+        confirmacion.Ocultar();
+        ReservaBorrar = null;
+    }
+
+    private async Task Borrar()
+    {
+        var respuesta = await http.Delete($"api/Reservas/{ReservaBorrar.Id}");
+        if(respuesta.Error)
+        {
+            var body = "Error";
+        }
+
+        if (HuespedBorrar != null)
+        {
+            var respuestaH = await http.Delete($"api/Huespedes/{HuespedBorrar.Id}");
+            if(respuestaH.Error)
+            {
+                var body = "Error";
+            }            
+        }
+        if (PersonaBorrar != null)
+        {
+            var respuestaP = await http.Delete($"api/Personas/{PersonaBorrar.Id}");
+            if(respuestaP.Error)
+            {
+                var body = "Error";
+            }            
+        }
+
+        Cancelar();
+        await Leer();
+        await LeerAlojamiento();
+        await LeerHuesped();
+        await LeerPersona();
+        await LeerRespRes();
+    }
+
+}

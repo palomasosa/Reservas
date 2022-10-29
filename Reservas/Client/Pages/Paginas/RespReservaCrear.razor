@@ -1,0 +1,87 @@
+﻿@page "/Responsables/Crear"
+@inject IHttpService http
+@inject NavigationManager navigationManager
+@inject IJSRuntime JsRuntime
+
+<h3>Nuevo responsable de reserva</h3>
+
+<FormResponsables persona="persona" onCancel="Cancelar" onValidSubmit="Grabar" />
+
+@code {
+    private Persona persona= new Persona();
+    private RespReserva respReserva = new RespReserva();
+
+
+    private async void Grabar()
+    {
+        int idPersona = 0;
+        bool existePersona = false; 
+        List<Persona> personas;
+
+        var respuesta = await http.Get<List<Persona>>("api/Personas");
+        if (!respuesta.Error)
+        {
+            personas = respuesta.Respuesta;
+            foreach (var item in personas)
+             {
+                if (item.Apellido == persona.Apellido && item.Mail == persona.Mail
+                        && item.Nombre == persona.Nombre && item.Telefono == persona.Telefono)
+                 {
+                    existePersona = true;
+                    await JsRuntime.InvokeVoidAsync("alert", "Este responsable ya existe.");
+                  }
+              }
+
+        }
+
+
+        if (existePersona == false)
+        {
+            var httpRespuesta = await http.Post<Persona>("api/Personas", persona);
+            if (httpRespuesta.Error)
+            {
+                var body = httpRespuesta.HttpResponseMessage;
+
+            }
+            else
+            {
+
+                respuesta = await http.Get<List<Persona>>("api/Personas");
+                if (!respuesta.Error)
+                {
+                    personas = respuesta.Respuesta;
+                    foreach (var item in personas)
+                    {
+                        if (item.Apellido == persona.Apellido && item.Mail == persona.Mail
+                            && item.Nombre == persona.Nombre && item.Telefono == persona.Telefono)
+                        {
+                            idPersona = item.Id;
+                        }
+                    }
+
+                }
+                Console.WriteLine(idPersona);
+            
+                respReserva.PersonaId = idPersona;
+                var httpRespuestaRespRes = await http.Post<RespReserva>("api/RespReservas", respReserva);
+                if (httpRespuestaRespRes.Error)
+                {
+                    var body = httpRespuestaRespRes.HttpResponseMessage;
+                }
+                else
+                {
+                    navigationManager.NavigateTo("/Responsables");                
+                }
+
+            }
+
+           
+        }
+ 
+    }
+
+    private void Cancelar()
+    {
+        navigationManager.NavigateTo("/Responsables");
+    }
+}

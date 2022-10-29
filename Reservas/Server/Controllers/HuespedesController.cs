@@ -18,7 +18,7 @@ namespace Reservas.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Huesped>>> Get()
         {
-            return await context.Huespedes.ToListAsync();
+            return await context.Huespedes.Include(x=>x.Persona).ToListAsync();
         }
         [HttpGet("{id:int}")]
         public async Task<ActionResult<Huesped>> Get(int id)

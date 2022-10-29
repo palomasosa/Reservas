@@ -34,6 +34,66 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/palos/source/repos/Reservas/Reservas/Client/Pages/Paginas/AlojamientoCrear.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnaW5hc1xBbG9qYW1pZW50b0NyZWFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/palos/source/repos/Reservas/Reservas/Client/Pages/Paginas/AlojamientoEditar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnaW5hc1xBbG9qYW1pZW50b0VkaXRhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/palos/source/repos/Reservas/Reservas/Client/Pages/Paginas/FormAlojamiento.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnaW5hc1xGb3JtQWxvamFtaWVudG8ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/palos/source/repos/Reservas/Reservas/Client/Pages/Paginas/FormReserva.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnaW5hc1xGb3JtUmVzZXJ2YS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/palos/source/repos/Reservas/Reservas/Client/Pages/Paginas/FormResponsables.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnaW5hc1xGb3JtUmVzcG9uc2FibGVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/palos/source/repos/Reservas/Reservas/Client/Pages/Paginas/ListaAlojamientos.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnaW5hc1xMaXN0YUFsb2phbWllbnRvcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/palos/source/repos/Reservas/Reservas/Client/Pages/Paginas/ListaHuespedes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnaW5hc1xMaXN0YUh1ZXNwZWRlcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/palos/source/repos/Reservas/Reservas/Client/Pages/Paginas/ListaReservas.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnaW5hc1xMaXN0YVJlc2VydmFzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/palos/source/repos/Reservas/Reservas/Client/Pages/Paginas/ListaReservasHuesped.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnaW5hc1xMaXN0YVJlc2VydmFzSHVlc3BlZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/palos/source/repos/Reservas/Reservas/Client/Pages/Paginas/ListaResponsables.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnaW5hc1xMaXN0YVJlc3BvbnNhYmxlcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/palos/source/repos/Reservas/Reservas/Client/Pages/Paginas/ReservasCrear.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnaW5hc1xSZXNlcnZhc0NyZWFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/palos/source/repos/Reservas/Reservas/Client/Pages/Paginas/ReservasEditar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnaW5hc1xSZXNlcnZhc0VkaXRhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/palos/source/repos/Reservas/Reservas/Client/Pages/Paginas/RespReservaCrear.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnaW5hc1xSZXNwUmVzZXJ2YUNyZWFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/palos/source/repos/Reservas/Reservas/Client/Pages/Paginas/RespReservaEditar.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUGFnaW5hc1xSZXNwUmVzZXJ2YUVkaXRhci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/palos/source/repos/Reservas/Reservas/Client/Shared/Confirmacion.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXENvbmZpcm1hY2lvbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/palos/source/repos/Reservas/Reservas/Client/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

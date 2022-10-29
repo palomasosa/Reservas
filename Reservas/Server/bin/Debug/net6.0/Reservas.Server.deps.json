@@ -664,6 +664,7 @@
       "Reservas.Client/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Components.WebAssembly": "6.0.6",
+          "Reservas.BD": "1.0.0",
           "Reservas.Shared": "1.0.0"
         },
         "runtime": {

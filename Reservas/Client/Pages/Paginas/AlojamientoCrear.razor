@@ -1,0 +1,49 @@
+﻿@page "/Alojamientos/Crear"
+@inject IHttpService http
+@inject NavigationManager navigationManager
+@inject IJSRuntime JsRuntime
+
+<h3>Nuevo alojamiento</h3>
+
+<FormAlojamiento alojamiento="alojamiento" onCancel="Cancelar" onValidSubmit="Grabar" />
+
+@code {
+    private Alojamiento alojamiento = new Alojamiento();
+
+    private async void Grabar()
+    {
+        bool existeAlojamiento = false; //HACER VALIDACIONNNNNN
+        List<Alojamiento> alojamientos;
+        var respuesta = await http.Get<List<Alojamiento>>("api/Alojamientos");
+
+        if (!respuesta.Error)
+        {
+            alojamientos = respuesta.Respuesta;
+            foreach (var item in alojamientos)
+            {
+                if (item.NombreAlojamiento == alojamiento.NombreAlojamiento 
+                    && item.DireccionAlojamiento == alojamiento.DireccionAlojamiento)
+                {
+                    existeAlojamiento = true;
+                    await JsRuntime.InvokeVoidAsync("alert", "Este alojamiento ya existe.");
+                }
+            }
+
+        }
+        if(existeAlojamiento == false)
+        {
+                 var httpRespuesta = await http.Post<Alojamiento>("api/Alojamientos", alojamiento);
+                if (httpRespuesta.Error)
+                    {
+                    var body = httpRespuesta.HttpResponseMessage;
+                    }
+                navigationManager.NavigateTo("/Alojamientos");   
+        }
+
+    }
+
+    private void Cancelar()
+    {
+        navigationManager.NavigateTo("/Alojamientos");
+    }
+}

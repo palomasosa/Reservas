@@ -1,0 +1,47 @@
+﻿@page "/Responsables/Editar/{personaId:int}"
+@inject IHttpService http
+@inject NavigationManager navigationManager
+
+<h3>Editar responsable de reserva</h3>
+
+<FormResponsables persona="persona" onCancel="Cancelar" onValidSubmit="Grabar" />
+
+@code 
+{
+    private Persona persona = new Persona();
+    [Parameter] public int personaId { get; set; }
+
+    protected async override Task OnInitializedAsync()
+    {
+        await Mostrar();
+    }
+
+    private async Task Mostrar()
+    {
+        var respuesta = await http.Get<Persona>($"api/Personas/{personaId}");
+        if(respuesta.Error)
+        {
+            var body = respuesta.HttpResponseMessage;
+        }
+        else
+        {
+            persona = respuesta.Respuesta;
+        }
+    }
+
+    private async void Grabar()
+    {
+        var respuesta = await http.Put<Persona>($"api/Personas/{personaId}",
+                                                     persona);
+        if (respuesta.Error)
+        {
+            var body = respuesta.HttpResponseMessage;
+        }
+        navigationManager.NavigateTo("/Responsables");
+    }
+
+    private void Cancelar()
+    {
+        navigationManager.NavigateTo("/Responsables");
+    }
+}

@@ -19,7 +19,7 @@ namespace Reservas.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Reserva>>> Get()
         {
-            return await context.Reservas.ToListAsync();
+            return await context.Reservas.Include(x=> x.Huesped).Include(x => x.Alojamiento).Include(x => x.RespReserva).ToListAsync();
         }
 
         [HttpGet("{id:int}")]
@@ -52,6 +52,10 @@ namespace Reservas.Server.Controllers
         [HttpPut("{id:int}")]
         public ActionResult Put(int id, [FromBody] Reserva reserva)
         {
+            //if (id != reserva.Id)
+            //{
+            //    return BadRequest("Datos incorrectos");
+            //}
             var reservaSolicitada = context.Reservas
                 .Where(x => x.Id == id).FirstOrDefault();
             if (reservaSolicitada == null)

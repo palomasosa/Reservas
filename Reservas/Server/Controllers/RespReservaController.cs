@@ -18,7 +18,7 @@ namespace Reservas.Server.Controllers
         [HttpGet]
         public async Task<ActionResult<List<RespReserva>>> Get()
         {
-            return await context.RespReservas.ToListAsync();
+            return await context.RespReservas.Include(x=> x.Persona).ToListAsync();
         }
         [HttpGet("{id:int}")]
         public async Task<ActionResult<RespReserva>> Get(int id)
@@ -50,7 +50,7 @@ namespace Reservas.Server.Controllers
         [HttpPut("{id:int}")]
         public ActionResult Put(int id, [FromBody] RespReserva respReserva)
         {
-            //if (id != huesped.Id)
+            //if (id != respReserva.Id)
             //{
             //    return BadRequest("Datos incorrectos");
             //}

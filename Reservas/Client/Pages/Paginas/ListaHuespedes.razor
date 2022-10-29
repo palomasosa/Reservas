@@ -1,0 +1,124 @@
+﻿@page "/Huespedes"
+@inject IHttpService http
+
+<h2>Huespedes</h2>
+
+    @if (huespedes == null)
+    {
+        <tr>Cargando...</tr>
+    }
+    else if(huespedes.Count == 0)
+    {
+        <tr>No hay huespedes cargados</tr>
+    }
+    else
+    {
+        @foreach (var item in huespedes)
+        {
+            <div class="card" style="width: 18rem; margin-bottom:1rem;">
+            <ul style="padding-left:0rem;">
+                <li class="list-group-item" style="display:flex; justify-content:center;">Nombre: @item.Persona.Nombre</li>
+                <li class="list-group-item" style="display:flex; justify-content:center;">Apellido: @item.Persona.Apellido</li>
+                <li class="list-group-item" style="display:flex; justify-content:center;">Mail: @item.Persona.Mail</li>
+                <li class="list-group-item" style="display:flex; justify-content:center;">Telefono: @item.Persona.Telefono</li>
+                <li class="list-group-item" style="display:flex; justify-content:center;">DNI: @item.DNI</li>
+                <li class="list-group-item" style="display:flex; justify-content:center;">Domicilio: @item.Domicilio</li>
+                <li class="list-group-item" style="display:flex; justify-content:center;">Nacionalidad: @item.Nacionalidad</li>
+
+                    <div style="display:flex; justify-content:center;">
+                    <a class="btn btn-warning"
+                       href="Huespedes/Reservas/@item.Id" style="width:40%; margin-top:1rem;">
+                        Mostrar reservas
+                    </a>
+
+
+                    <button class="btn btn-danger"
+                            @onclick="()=>Eliminar(item)" style="width:40%; margin-top:1rem;">
+                        Borrar
+                    </button>
+                    </div>
+            </ul>
+            </div>
+        }
+    }
+
+<Confirmacion @ref="confirmacion"
+              verCancelar="true"
+              verOk="true"
+              textOk="Ok"
+              Titulo="Borrar especialidad"
+              onCancel="Cancelar"
+              onConfirm="Borrar">
+              <div>
+                  El huesped @HuespedBorrar.Persona.Nombre @HuespedBorrar.Persona.Apellido y todas sus reservas registradas se eliminarán
+                  <br />
+                  ¿Está seguro que desea continuar?
+              </div>
+</Confirmacion>
+
+
+@code {
+    List<Huesped> huespedes;
+    Confirmacion confirmacion;
+    Huesped HuespedBorrar;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        await Leer();
+    }
+
+    private async Task Leer()
+    {
+        var respuesta = await http.Get<List<Huesped>>("api/Huespedes");
+        if(!respuesta.Error)
+        {
+            huespedes = respuesta.Respuesta;
+        }
+    }
+
+    private void Eliminar(Huesped huespedBorrar)
+    {
+        HuespedBorrar = huespedBorrar;
+        confirmacion.Ver();
+    }
+
+    private void Cancelar()
+    {
+        confirmacion.Ocultar();
+        HuespedBorrar = null;
+    }
+
+    private async Task Borrar()
+    {
+        List<Reserva> reservas;
+        var respuestaReserva = await http.Get<List<Reserva>>("api/Reservas");
+        if(!respuestaReserva.Error)
+        {
+            reservas = respuestaReserva.Respuesta;
+            foreach (var item in reservas)
+            {
+                if (item.HuespedId == HuespedBorrar.Id)
+                {
+                    var respuestaBorrarReserva = await http.Delete($"api/Reservas/{item.Id}");
+                }
+            }
+        }
+
+        var respuesta = await http.Delete($"api/Huespedes/{HuespedBorrar.Id}");
+        if(respuesta.Error)
+        {
+            var body = "Error";
+        }
+
+        var respuestaPers = await http.Delete($"api/Personas/{HuespedBorrar.PersonaId}");
+        if (respuestaPers.Error)
+        {
+            var body = "Error";
+        }
+
+        Cancelar();
+        await Leer();
+    }
+}

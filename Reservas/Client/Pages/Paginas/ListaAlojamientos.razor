@@ -1,0 +1,104 @@
+﻿@page "/Alojamientos"
+@inject IHttpService http
+
+<h2>Alojamientos</h2>
+
+<a class="btn btn-primary" href="Alojamientos/Crear" style="margin-bottom: 1rem;">Nuevo alojamiento</a>
+
+
+
+    @if (alojamientos == null)
+    {
+        <tr>Cargando...</tr>
+    }
+    else if(alojamientos.Count == 0)
+    {
+        <tr>No hay alojamientos cargados</tr>
+    }
+    else
+    {
+        @foreach (var item in alojamientos)
+        {
+            <div class="card" style="width: 18rem; margin-bottom:1rem;">
+            <ul style="padding-left:0rem;">
+                <li class="list-group-item" style="display:flex; justify-content:center;">@item.NombreAlojamiento</li>
+                <li class="list-group-item" style="display:flex; justify-content:center;">@item.DireccionAlojamiento</li>
+
+                    <div style="display:flex; justify-content:space-evenly;">
+                    <a class="btn btn-warning"
+                       href="Alojamientos/Editar/@item.Id" style="width:40%; margin-top:1rem;">
+                        Editar
+                    </a>
+
+
+                    <button class="btn btn-danger"
+                            @onclick="()=>Eliminar(item)" style="width:40%; margin-top:1rem;">
+                        Borrar
+                    </button>
+                    </div>
+            </ul>
+            </div>
+        }
+   
+    }
+
+<Confirmacion @ref="confirmacion"
+              verCancelar="true"
+              verOk="true"
+              textOk="Ok"
+              Titulo="Borrar especialidad"
+              onCancel="Cancelar"
+              onConfirm="Borrar">
+              <div>
+                  Está por borrar el alojamiento: @AlojamientoBorrar.NombreAlojamiento
+                  <br />
+                  ¿Está seguro que desea continuar?
+              </div>
+</Confirmacion>
+
+
+@code {
+    List<Alojamiento> alojamientos;
+    Confirmacion confirmacion;
+    Alojamiento AlojamientoBorrar;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        await Leer();
+    }
+
+    private async Task Leer()
+    {
+        var respuesta = await http.Get<List<Alojamiento>>("api/Alojamientos");
+        if(!respuesta.Error)
+        {
+            alojamientos = respuesta.Respuesta;
+        }
+    }
+
+    private void Eliminar(Alojamiento alojamientoBorrar)
+    {
+        AlojamientoBorrar = alojamientoBorrar;
+        confirmacion.Ver();
+    }
+
+    private void Cancelar()
+    {
+        confirmacion.Ocultar();
+        AlojamientoBorrar = null;
+    }
+
+    private async Task Borrar()
+    {
+        var respuesta = await http.Delete($"api/Alojamientos/{AlojamientoBorrar.Id}");
+        if(respuesta.Error)
+        {
+            var body = "Error";
+        }
+        Cancelar();
+        await Leer();
+    }
+}
+

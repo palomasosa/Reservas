@@ -1,3 +1,4 @@
+C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\libman.json
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Reservas.Client.staticwebassets.runtime.json
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\appsettings.json

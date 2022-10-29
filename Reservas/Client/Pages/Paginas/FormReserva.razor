@@ -1,0 +1,179 @@
+﻿<EditForm Model="persona" style="width: 18rem;">
+    <DataAnnotationsValidator/>
+    <div class="form-group">
+            <label>Nombre</label>
+            <div>
+                <InputText class="form-control" @bind-Value="@persona.Nombre"/>
+                <ValidationMessage For="@(() => persona.Nombre)"/>
+
+            </div>
+    </div>
+    <div class="form-group">
+            <label>Apellido</label>
+            <div>
+                <InputText class="form-control" @bind-Value="@persona.Apellido"/>
+                <ValidationMessage For="@(() => persona.Apellido)"/>
+
+            </div>
+    </div>
+    <div class="form-group">
+            <label>Mail</label>
+            <div>
+                <InputText class="form-control" @bind-Value="@persona.Mail"/>
+                <ValidationMessage For="@(() => persona.Mail)"/>
+
+            </div>
+    </div>
+    <div class="form-group">
+            <label>Telefono</label>
+            <div>
+                <InputNumber class="form-control" @bind-Value="@persona.Telefono"/>
+                <ValidationMessage For="@(() => persona.Telefono)"/>
+
+            </div>
+    </div>
+  </EditForm>
+
+
+
+
+
+  <EditForm Model="huesped" style="width: 18rem;">
+    <DataAnnotationsValidator/>
+    <div class="form-group">
+            <label>DNI</label>
+            <div>
+                <InputText class="form-control" @bind-Value="@huesped.DNI"/>
+                <ValidationMessage For="@(() => huesped.DNI)"/>
+
+            </div>
+    </div>
+    <div class="form-group">
+            <label>Nacionalidad</label>
+            <div>
+                <InputText class="form-control" @bind-Value="@huesped.Nacionalidad"/>
+                <ValidationMessage For="@(() => huesped.Nacionalidad)"/>
+
+            </div>
+    </div>
+    <div class="form-group">
+            <label>Domicilio</label>
+            <div>
+                <InputText class="form-control" @bind-Value="@huesped.Domicilio"/>
+                <ValidationMessage For="@(() => huesped.Domicilio)"/>
+
+            </div>
+    </div>
+
+</EditForm>
+
+
+
+<EditForm Model="reserva" OnValidSubmit="onValidSubmit" style="width: 18rem;">
+    <DataAnnotationsValidator/>
+    <div class="form-group">
+            <label>Fecha de entrada</label>
+            <div>
+                <InputDate class="form-control" @bind-Value="@reserva.fechaEntrada"/>
+                <ValidationMessage For="@(() => reserva.fechaEntrada)"/>
+
+            </div>
+    </div>
+    <div class="form-group" style="width: 18rem;">
+            <label>Fecha de salida</label>
+            <div>
+                <InputDate class="form-control" @bind-Value="@reserva.fechaSalida"/>
+                <ValidationMessage For="@(() => reserva.fechaSalida)"/>
+
+            </div>
+    </div>
+
+        <div class="form-group">
+            <label>Total de pasajeros</label>
+            <div>
+                <InputNumber class="form-control" @bind-Value="@reserva.totalPasajeros"/>
+                <ValidationMessage For="@(() => reserva.totalPasajeros)"/>
+
+            </div>
+    </div>
+    <div class="form-group">
+            <label>Fecha de depósito</label>
+            <div>
+                <InputDate class="form-control" @bind-Value="@reserva.fechaDeposito"/>
+                <ValidationMessage For="@(() => reserva.fechaDeposito)"/>
+
+            </div>
+    </div>
+    <div class="form-group">
+            <label>Monto de depósito</label>
+            <div>
+                <InputNumber class="form-control" @bind-Value="@reserva.montoDeposito"/>
+                <ValidationMessage For="@(() => reserva.montoDeposito)"/>
+
+            </div>
+    </div>
+    <div class="form-group">
+            <label>Saldo restante</label>
+            <div>
+                <InputNumber class="form-control" @bind-Value="@reserva.saldoRestante"/>
+                <ValidationMessage For="@(() => reserva.saldoRestante)"/>
+
+            </div>
+    </div>
+
+    <div class="form-group">
+            <label>Horario de check-in</label>
+            <div>
+                <InputNumber class="form-control" @bind-Value="@reserva.horarioCheckIn"/>
+                <ValidationMessage For="@(() => reserva.horarioCheckOut)"/>
+
+            </div>
+    </div>
+    <div class="form-group">
+            <label>Horario de check-out</label>
+            <div>
+                <InputNumber class="form-control" @bind-Value="@reserva.horarioCheckOut"/>
+                <ValidationMessage For="@(() => reserva.horarioCheckOut)"/>
+
+            </div>
+    </div>
+
+        <div class="form-group">
+            <label>ID de responsable de la reserva</label>
+            <div>
+                <InputNumber class="form-control" @bind-Value="@reserva.RespReservaId"/>
+                <ValidationMessage For="@(() => reserva.RespReservaId)"/>
+
+            </div>
+    </div>
+
+            <div class="form-group">
+            <label>ZEN n°</label>
+            <div>
+                <InputNumber class="form-control" @bind-Value="@reserva.AlojamientoId"/>
+                <ValidationMessage For="@(() => reserva.AlojamientoId)"/>
+
+            </div>
+    </div>
+    <br />
+    <button class="btn btn-primary" type="submit">Aceptar</button>
+    <button class="btn btn-secondary" @onclick="onCancel">Cancelar</button>
+    <br />
+</EditForm>
+
+@code {
+    [Parameter] public Reserva reserva { get; set; }
+    [Parameter] public Huesped huesped { get; set; }
+    [Parameter] public Persona persona { get; set; }
+    [Parameter] public EventCallback onValidSubmit { get; set; }
+    [Parameter] public EventCallback onCancel { get; set; }
+
+    protected override void OnInitialized()
+    {
+        reserva.fechaEntrada = DateTime.Today;
+        reserva.fechaSalida = DateTime.Today;
+        reserva.fechaDeposito = DateTime.Today;
+        reserva.horarioCheckIn = 14;
+        reserva.horarioCheckOut = 10;
+    }
+}

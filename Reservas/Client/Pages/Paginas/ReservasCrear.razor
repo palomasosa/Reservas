@@ -1,0 +1,138 @@
+﻿@page "/Crear"
+@inject NavigationManager navigationManager
+@using System
+
+@inject IHttpService http
+
+<h2>Reservas</h2>
+
+<FormReserva 
+    reserva="reserva"
+    persona="persona"
+    huesped="huesped"
+    onCancel="Cancelar" onValidSubmit="Grabar"
+/>
+
+
+@code {
+    private Persona persona = new Persona();
+    private Reserva reserva = new Reserva();
+    private Huesped huesped = new Huesped();
+    private async void Grabar()
+    {
+        List<Persona> personas;
+        var respuesta = await http.Get<List<Persona>>("api/Personas");
+        List<Huesped> huespedes;
+        var respuestaH = await http.Get<List<Huesped>>("api/Huespedes");
+
+        bool existePersona = false;
+        bool existeHuesped = false;
+
+        if (!respuesta.Error) 
+        {
+            personas = respuesta.Respuesta;
+            foreach (var item in personas)
+            {
+                if (item.Apellido == persona.Apellido && item.Mail == persona.Mail && item.Nombre == persona.Nombre && item.Telefono == persona.Telefono)
+                {
+                    existePersona = true;
+                }
+            }
+        }
+        if (existePersona == false) 
+        {
+            var httpRespuesta = await http.Post<Persona>("api/Personas", persona);
+            if (httpRespuesta.Error)
+            {
+                var body = httpRespuesta.HttpResponseMessage;
+
+            }
+        }
+        //List<Persona> personas;
+        //var respuesta = await http.Get<List<Persona>>("api/Personas");
+        int idPersona = 0;
+        respuesta = await http.Get<List<Persona>>("api/Personas");
+        if (!respuesta.Error)
+        {
+            personas = respuesta.Respuesta;
+            foreach (var item in personas)
+            {
+                if (item.Apellido == persona.Apellido && item.Mail == persona.Mail && item.Nombre == persona.Nombre && item.Telefono == persona.Telefono)
+                {
+                    idPersona = item.Id;
+                }
+
+            }
+        }
+
+        huesped.PersonaId = idPersona;
+        if (!respuestaH.Error) 
+        {
+            huespedes = respuestaH.Respuesta;
+            foreach (var item in huespedes)
+            {
+                if (item.DNI == huesped.DNI && item.Nacionalidad == huesped.Nacionalidad && item.Domicilio == huesped.Domicilio)
+                {
+                    existeHuesped = true;
+                }
+            }
+        }
+        if (existeHuesped == false)
+        {
+            var httpRespuestaHuesped = await http.Post<Huesped>("api/Huespedes", huesped);
+            if (httpRespuestaHuesped.Error)
+            {
+                var body = httpRespuestaHuesped.HttpResponseMessage;
+                Console.Write(httpRespuestaHuesped.HttpResponseMessage);
+
+            } 
+        }
+
+            //List<Huesped> huespedes;
+            //var respuestaH = await http.Get<List<Huesped>>("api/Huespedes");
+            int idHuesped = 0;
+            respuestaH = await http.Get<List<Huesped>>("api/Huespedes");
+            if (!respuestaH.Error)
+            {
+                huespedes = respuestaH.Respuesta;
+                foreach (var item in huespedes)
+                {
+                    if (item.DNI == huesped.DNI && item.Nacionalidad == huesped.Nacionalidad && item.Domicilio == huesped.Domicilio)
+                    {
+                        idHuesped = item.Id;
+                    }
+
+                }
+            }
+
+            reserva.HuespedId = idHuesped;
+
+            int numeroNoches = System.Convert.ToInt32((reserva.fechaSalida - reserva.fechaEntrada).Days);
+            int prcTotal = reserva.montoDeposito + reserva.saldoRestante;
+
+            reserva.totalNoches = numeroNoches;
+            reserva.precioTotal = prcTotal;
+            var httpRespuestaReserva = await http.Post<Reserva>("api/Reservas", reserva);
+            if (httpRespuestaReserva.Error)
+            {
+                var body = httpRespuestaReserva.HttpResponseMessage;
+                Console.Write(httpRespuestaReserva.HttpResponseMessage);
+
+             }
+
+
+                navigationManager.NavigateTo("/Reservas");
+            
+        
+    }
+
+
+
+
+
+    private void Cancelar()
+    {
+        navigationManager.NavigateTo("/Reservas");
+
+    }
+}
