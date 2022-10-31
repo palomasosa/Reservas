@@ -1,5 +1,6 @@
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\blazor.boot.json
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\blazor.webassembly.js
+C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\BouncyCastle.Crypto.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\dotnet.6.0.4.qv3sgzvyg2.js
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\dotnet.timezones.blat
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\dotnet.wasm
@@ -7,6 +8,7 @@ C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_f
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\icudt_CJK.dat
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\icudt_EFIGS.dat
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\icudt_no_CJK.dat
+C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\MailKit.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Forms.dll
@@ -48,6 +50,7 @@ C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_f
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.Primitives.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.Registry.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.SystemEvents.dll
+C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\MimeKit.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\mscorlib.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\netstandard.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\Reservas.BD.dll
@@ -180,6 +183,7 @@ C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_f
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Security.Cryptography.Csp.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Security.Cryptography.Encoding.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Security.Cryptography.OpenSsl.dll
+C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Security.Cryptography.Pkcs.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Security.Cryptography.Primitives.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Security.Cryptography.ProtectedData.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Security.Cryptography.X509Certificates.dll
@@ -255,6 +259,7 @@ C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_f
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.SystemEvents.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Security.Principal.Windows.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\dotnet.timezones.blat.gz
+C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\MailKit.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.IO.FileSystem.DriveInfo.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Formats.Asn1.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.IO.IsolatedStorage.dll.gz
@@ -266,6 +271,7 @@ C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_f
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Net.Quic.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.IO.FileSystem.AccessControl.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\Reservas.Client.pdb.gz
+C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\BouncyCastle.Crypto.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Linq.Queryable.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Security.Cryptography.OpenSsl.dll.gz
@@ -337,6 +343,7 @@ C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_f
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Threading.Tasks.Dataflow.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Diagnostics.Process.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Security.Cryptography.Primitives.dll.gz
+C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\MimeKit.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.ComponentModel.Primitives.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Configuration.Json.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Extensions.Logging.dll.gz
@@ -422,6 +429,7 @@ C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_f
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Runtime.Serialization.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Reflection.Emit.Lightweight.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.IdentityModel.Logging.dll.gz
+C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Security.Cryptography.Pkcs.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\Microsoft.Win32.Primitives.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.Security.dll.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\wwwroot\_framework\System.IO.dll.gz
@@ -451,6 +459,7 @@ C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\libman.jso
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\Reservas.Client.staticwebassets.runtime.json
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\Reservas.Client.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\Reservas.Client.pdb
+C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\MailKit.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
@@ -487,11 +496,14 @@ C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\Microsoft.
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\Microsoft.JSInterop.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\Microsoft.JSInterop.WebAssembly.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\MimeKit.dll
+C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\BouncyCastle.Crypto.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\System.Drawing.Common.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\System.IO.Pipelines.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\System.Security.Permissions.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Client\bin\Debug\net6.0\System.Windows.Extensions.dll
@@ -678,6 +690,7 @@ C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\Reservas.C
 C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\Reservas.Client.AssemblyInfo.cs
 C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\Reservas.Client.csproj.CoreCompileInputs.cache
 C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\Reservas.Client.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\5YfNdec4.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\DKaehJti.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\JoJCAOWL.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\74jaDLxb.gz
@@ -714,11 +727,14 @@ C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\O
 C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\dpp0Jt65.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\RzuoXllk.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\4TBoxhAa.gz
+C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\KAzNrWza.gz
+C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\A5HnrzpL.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\zStWWWbm.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\qyFiVYI0.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\OkKfqdwm.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\U1GvCRCq.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\+UZf9ZqU.gz
+C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\VEHtNw93.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\7zGENknW.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\0yIeP+o3.gz
 C:\Users\palos\source\repos\Reservas\Reservas\Client\obj\Debug\net6.0\build-gz\tO3hXqxQ.gz

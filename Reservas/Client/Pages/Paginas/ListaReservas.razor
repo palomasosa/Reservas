@@ -4,14 +4,6 @@
 
 <h2 style="text-align: center;">Reservas</h2>
 
-
-<button class="btn btn-primary"
-       @onclick="Descargar">
-        Descargar
-</button>
-<span style="text-align: center;">Si no logra descargar el archivo hay un problema de caché, cargue nuevamente la página
-</span>
-
     @if(reservas == null)
     {
         <h4 style="text-align: center;">Cargando...</h4>
@@ -50,8 +42,7 @@ else
                                         <li class="list-group-item">Nombre: @itemPers.Nombre</li>
                                         <li class="list-group-item">Apellido: @itemPers.Apellido</li>
                                         <li class="list-group-item">Telefono: @itemPers.Telefono</li>
-                                    <li class="list-group-item">Mail: @itemPers.Mail</li>
-                                    personaResp = itemPers;
+                                        <li class="list-group-item">Mail: @itemPers.Mail</li>
                                 }
                             }
                         }
@@ -80,9 +71,9 @@ else
                                         <li class="list-group-item">Mail: @itemPers.Mail</li>
                                         <li class="list-group-item">DNI: @itemHuesped.DNI</li>
                                         <li class="list-group-item">Nacionalidad: @itemHuesped.Nacionalidad</li>
-                                    <li class="list-group-item">Domicilio: @itemHuesped.Domicilio</li>
-                                    IDpersona = itemHuesped.PersonaId;
-                                    personaBr = itemPers;
+                                        <li class="list-group-item">Domicilio: @itemHuesped.Domicilio</li>
+                                        IDpersona = itemHuesped.PersonaId;
+                                        personaBr = itemPers;
                                 }
                             }
                         }
@@ -107,6 +98,13 @@ else
              </ul>
              <br/>
 
+
+             <a class="btn btn-primary"
+                 href="Reservas/Ver/@item.Id">
+                        Ver reserva
+             </a>
+
+             <br/>
              <a class="btn btn-warning"
                  href="Reservas/Editar/@item.Id/@IDhuesped/@IDpersona">
                         Editar
@@ -114,7 +112,7 @@ else
              <br/>
              <button class="btn btn-danger"
                  @onclick="()=>Eliminar(item, personaBr, huespedBr)">
-                 Borrar
+                 Eliminar
               </button>
         </div>
         <br/>
@@ -142,25 +140,23 @@ else
     List<Persona> personas;
     List<Huesped> huespedes;
     List<RespReserva> respReservas;
-    List<Alojamiento> alojamientos;
     Reserva ReservaBorrar;
     Persona PersonaBorrar;
     Huesped HuespedBorrar;
 
     Persona personaBr;
     Huesped huespedBr;
-    Persona personaResp;
+
+
     Confirmacion confirmacion;
 
     int IDpersona;
     int IDhuesped;
 
-
     protected override async Task OnInitializedAsync()
     {
         base.OnInitializedAsync();
         await Leer();
-        await LeerAlojamiento();
         await LeerHuesped();
         await LeerPersona();
         await LeerRespRes();
@@ -200,17 +196,6 @@ else
             respReservas = respuesta.Respuesta;
         }
     }
-
-
-    private async Task LeerAlojamiento()
-    {
-        var respuesta = await http.Get<List<Alojamiento>>("api/Alojamientos");
-        if (!respuesta.Error)
-        {
-            alojamientos = respuesta.Respuesta;
-        }
-    }
-
 
     private void Eliminar(Reserva reservaBorrar, Persona personaBorrar, Huesped huespedBorrar)
     {
@@ -263,37 +248,11 @@ else
 
         Cancelar();
         await Leer();
-        await LeerAlojamiento();
         await LeerHuesped();
         await LeerPersona();
         await LeerRespRes();
     }
 
-    private void Descargar()
-    {
-        try
-        {
-            jsRuntime.InvokeVoidAsync("Descarga");
-        }
-        catch(Exception e)
-        {
-            throw e;
-        }
-        Console.WriteLine("Se pudo hacer el print");
-    }
 
 
-    private void CrearPDF()
-    {
-        Document document = new Document();
-
-        Page page = new Page(PageSize.Letter, PageOrientation.Portrait, 54.0f);
-        document.Pages.Add(page);
-
-        string labelText = "Hello World...\nFrom DynamicPDF Generator for .NET\nDynamicPDF.com";
-        Label label = new Label(labelText, 0, 0, 504, 100, Font.Helvetica, 18, TextAlign.Center);
-        page.Elements.Add(label);
-
-        document.Draw("Output.pdf");
-    }
 }

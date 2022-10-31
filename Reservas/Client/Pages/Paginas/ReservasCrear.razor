@@ -1,8 +1,8 @@
 ﻿@page "/Crear"
 @inject NavigationManager navigationManager
 @using System
-
 @inject IHttpService http
+@inject IJSRuntime JsRuntime
 
 <h2>Reservas</h2>
 
@@ -24,6 +24,8 @@
         var respuesta = await http.Get<List<Persona>>("api/Personas");
         List<Huesped> huespedes;
         var respuestaH = await http.Get<List<Huesped>>("api/Huespedes");
+        List<Reserva> reservas;
+        var respuestaReserva = await http.Get<List<Reserva>>("api/Reservas");
 
         bool existePersona = false;
         bool existeHuesped = false;
@@ -71,7 +73,7 @@
             huespedes = respuestaH.Respuesta;
             foreach (var item in huespedes)
             {
-                if (item.DNI == huesped.DNI && item.Nacionalidad == huesped.Nacionalidad && item.Domicilio == huesped.Domicilio)
+                if (item.DNI == huesped.DNI)
                 {
                     existeHuesped = true;
                 }
@@ -88,42 +90,55 @@
             } 
         }
 
-            //List<Huesped> huespedes;
-            //var respuestaH = await http.Get<List<Huesped>>("api/Huespedes");
-            int idHuesped = 0;
-            respuestaH = await http.Get<List<Huesped>>("api/Huespedes");
-            if (!respuestaH.Error)
+        //List<Huesped> huespedes;
+        //var respuestaH = await http.Get<List<Huesped>>("api/Huespedes");
+        int idHuesped = 0;
+        respuestaH = await http.Get<List<Huesped>>("api/Huespedes");
+        if (!respuestaH.Error)
+        {
+            huespedes = respuestaH.Respuesta;
+            foreach (var item in huespedes)
             {
-                huespedes = respuestaH.Respuesta;
-                foreach (var item in huespedes)
+                if (item.DNI == huesped.DNI && item.Nacionalidad == huesped.Nacionalidad && item.Domicilio == huesped.Domicilio)
                 {
-                    if (item.DNI == huesped.DNI && item.Nacionalidad == huesped.Nacionalidad && item.Domicilio == huesped.Domicilio)
-                    {
-                        idHuesped = item.Id;
-                    }
+                    idHuesped = item.Id;
+                }
 
+            }
+        }
+
+        reserva.HuespedId = idHuesped;
+
+        int numeroNoches = System.Convert.ToInt32((reserva.fechaSalida - reserva.fechaEntrada).Days);
+        int prcTotal = reserva.montoDeposito + reserva.saldoRestante;
+
+        reserva.totalNoches = numeroNoches;
+        reserva.precioTotal = prcTotal;
+
+        var httpRespuestaReserva = await http.Post<Reserva>("api/Reservas", reserva);
+        if (httpRespuestaReserva.Error)
+        {
+            var body = httpRespuestaReserva.HttpResponseMessage;
+            Console.Write(httpRespuestaReserva.HttpResponseMessage);
+
+        }
+        else
+        {
+            int reservaCreadaId = 0;
+            respuestaReserva = await http.Get<List<Reserva>>("api/Reservas");
+            if (!respuestaReserva.Error)
+            {
+                reservas = respuestaReserva.Respuesta;
+                foreach (var item in reservas)
+                {
+                    if (item.AlojamientoId == reserva.AlojamientoId && item.fechaEntrada == reserva.fechaEntrada)
+                    {
+                        reservaCreadaId = item.Id;
+                    }
                 }
             }
-
-            reserva.HuespedId = idHuesped;
-
-            int numeroNoches = System.Convert.ToInt32((reserva.fechaSalida - reserva.fechaEntrada).Days);
-            int prcTotal = reserva.montoDeposito + reserva.saldoRestante;
-
-            reserva.totalNoches = numeroNoches;
-            reserva.precioTotal = prcTotal;
-            var httpRespuestaReserva = await http.Post<Reserva>("api/Reservas", reserva);
-            if (httpRespuestaReserva.Error)
-            {
-                var body = httpRespuestaReserva.HttpResponseMessage;
-                Console.Write(httpRespuestaReserva.HttpResponseMessage);
-
-             }
-
-
-                navigationManager.NavigateTo("/Reservas");
-            
-        
+            navigationManager.NavigateTo($"/Reservas/Ver/{reservaCreadaId}");
+        }
     }
 
 

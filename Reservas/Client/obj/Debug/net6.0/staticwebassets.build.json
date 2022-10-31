@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "1Ee9dlcruULyOnMyOIq2uXyqzyTk5IzszWtZsAXtF8A=",
+  "Hash": "Ygs10IuLb/PgwgiyiKTKsGvpkl+XxGTZ4653B1fB2OU=",
   "Source": "Reservas.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\palos\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\6.0.6\\build\\net6.0\\blazor.webassembly.js"
+    },
+    {
+      "Identity": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\BouncyCastle.Crypto.dll",
+      "SourceId": "Reservas.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/BouncyCastle.Crypto.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\palos\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\lib\\netstandard2.0\\BouncyCastle.Crypto.dll"
     },
     {
       "Identity": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\dotnet.6.0.4.qv3sgzvyg2.js",
@@ -168,6 +185,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\palos\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.4\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
+    },
+    {
+      "Identity": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\MailKit.dll",
+      "SourceId": "Reservas.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/MailKit.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\palos\\.nuget\\packages\\mailkit\\3.4.2\\lib\\net6.0\\MailKit.dll"
     },
     {
       "Identity": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll",
@@ -865,6 +899,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\palos\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\lib\\netstandard2.0\\Microsoft.Win32.SystemEvents.dll"
+    },
+    {
+      "Identity": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\MimeKit.dll",
+      "SourceId": "Reservas.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/MimeKit.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\palos\\.nuget\\packages\\mimekit\\3.4.2\\lib\\net6.0\\MimeKit.dll"
     },
     {
       "Identity": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\mscorlib.dll",
@@ -3111,6 +3162,23 @@
       "OriginalItemSpec": "C:\\Users\\palos\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\6.0.4\\runtimes\\browser-wasm\\lib\\net6.0\\System.Security.Cryptography.OpenSsl.dll"
     },
     {
+      "Identity": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Security.Cryptography.Pkcs.dll",
+      "SourceId": "Reservas.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.Security.Cryptography.Pkcs.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\palos\\.nuget\\packages\\system.security.cryptography.pkcs\\6.0.0\\lib\\net6.0\\System.Security.Cryptography.Pkcs.dll"
+    },
+    {
       "Identity": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Security.Cryptography.Primitives.dll",
       "SourceId": "Reservas.Client",
       "SourceType": "Computed",
@@ -4386,6 +4454,23 @@
       "OriginalItemSpec": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\dotnet.timezones.blat"
     },
     {
+      "Identity": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\obj\\Debug\\net6.0\\build-gz\\5YfNdec4.gz",
+      "SourceId": "Reservas.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/MailKit.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\MailKit.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\MailKit.dll"
+    },
+    {
       "Identity": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\obj\\Debug\\net6.0\\build-gz\\650dXCOR.gz",
       "SourceId": "Reservas.Client",
       "SourceType": "Computed",
@@ -4571,6 +4656,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Reservas.Client.pdb"
+    },
+    {
+      "Identity": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\obj\\Debug\\net6.0\\build-gz\\A5HnrzpL.gz",
+      "SourceId": "Reservas.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/BouncyCastle.Crypto.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\BouncyCastle.Crypto.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\BouncyCastle.Crypto.dll"
     },
     {
       "Identity": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\obj\\Debug\\net6.0\\build-gz\\a6PC9Sli.gz",
@@ -5778,6 +5880,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Security.Cryptography.Primitives.dll"
+    },
+    {
+      "Identity": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\obj\\Debug\\net6.0\\build-gz\\KAzNrWza.gz",
+      "SourceId": "Reservas.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/MimeKit.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\MimeKit.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\MimeKit.dll"
     },
     {
       "Identity": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\obj\\Debug\\net6.0\\build-gz\\kB2MnyiO.gz",
@@ -7223,6 +7342,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\Microsoft.IdentityModel.Logging.dll"
+    },
+    {
+      "Identity": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\obj\\Debug\\net6.0\\build-gz\\VEHtNw93.gz",
+      "SourceId": "Reservas.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/System.Security.Cryptography.Pkcs.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Security.Cryptography.Pkcs.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\bin\\Debug\\net6.0\\wwwroot\\_framework\\System.Security.Cryptography.Pkcs.dll"
     },
     {
       "Identity": "C:\\Users\\palos\\source\\repos\\Reservas\\Reservas\\Client\\obj\\Debug\\net6.0\\build-gz\\VeS4XMK3.gz",

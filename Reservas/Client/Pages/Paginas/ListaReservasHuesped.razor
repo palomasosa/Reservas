@@ -1,7 +1,6 @@
 ﻿@page "/Huespedes/Reservas/{huespedId:int}"
 @inject IHttpService http
 
-<h3 style="text-align:center;">Reservas del huesped @huesped.Persona.Nombre @huesped.Persona.Apellido</h3>
 
 
     @if(reservasHuesped == null)
@@ -14,6 +13,7 @@
     }
 else
 {
+    <h3 style="text-align:center;">Reservas del huesped @huesped.Persona.Nombre @huesped.Persona.Apellido</h3>
     <div class="card-group"> 
     @foreach (var item in reservasHuesped)
     {

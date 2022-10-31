@@ -15,6 +15,7 @@ C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Reservas.S
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Reservas.Server.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Reservas.Server.pdb
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Humanizer.dll
+C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\MailKit.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
@@ -40,6 +41,8 @@ C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Microsoft.
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Microsoft.JSInterop.WebAssembly.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Microsoft.OpenApi.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\MimeKit.dll
+C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\BouncyCastle.Crypto.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\palos\source\repos\Reservas\Reservas\Server\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll

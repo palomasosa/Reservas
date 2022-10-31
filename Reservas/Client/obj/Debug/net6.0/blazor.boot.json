@@ -7,6 +7,7 @@
   "linkerEnabled": false,
   "resources": {
     "assembly": {
+      "MailKit.dll": "sha256-wdwtcRha5irj5g1tXFRk8xPeZRTW\/ObxYjdPg6lJjG0=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-i8erNm9\/ug+tjL2wTfd+HykmjYrmFhvrwwRNHqkahl4=",
       "Microsoft.AspNetCore.Components.dll": "sha256-27ExXdI7a7yGnPr9shnwet9criuoLLMCTJDSTm4TQ9E=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-tc\/Tc3X1BHL58Qq+EiKqndDuweTp46BVc5QSeTLpxdc=",
@@ -43,11 +44,14 @@
       "Microsoft.JSInterop.dll": "sha256-y5UI2mXoPRb17qPFRWNqpbSKRGBzP+FvhcpcUg+TBBE=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-Lc7+j1yrzEs5\/zzv62fwz02\/1EkqvYpcZy3kSOtAjGc=",
       "Microsoft.Win32.SystemEvents.dll": "sha256-56MWX7GCuiW+O0EPzkUo0jj6T\/mhpVB6x+UFQtaS2qE=",
+      "MimeKit.dll": "sha256-vCmlyQVzuvlSC+0ZO5DP9C9L5mzlmyLRAASKa84QuTw=",
+      "BouncyCastle.Crypto.dll": "sha256-9CuGCYVNgNf4HydjQFBKpegrvk1z0FCA\/vH8yiREtNU=",
       "System.Configuration.ConfigurationManager.dll": "sha256-Rmj4lST8tNcZUOCtfg1W5eXbLHDjla1J99tqgWTMUNY=",
       "System.Drawing.Common.dll": "sha256-E+\/s4U4Xt\/iFr\/+Dd7ZSqXXAOJZKgnOAW4C5r7OPcHc=",
       "System.IdentityModel.Tokens.Jwt.dll": "sha256-sXPVBzH5GkrOxg71dclCkIUu1x2JTXiA7Pz\/bqxogtw=",
       "System.IO.Pipelines.dll": "sha256-6+E55JXedimdw1c1bDtVg4K7XuWjVWVTifH8QpfzXSY=",
       "System.Runtime.Caching.dll": "sha256-uinCUR2ohEr7HafWzdwVIpeyborl3XdQrpSXZ3TYWvQ=",
+      "System.Security.Cryptography.Pkcs.dll": "sha256-1+t9sGG0wBg\/lstcLoRRtkot6lY1qJBlclR9h5roiF0=",
       "System.Security.Cryptography.ProtectedData.dll": "sha256-hgT40uPpMnELY0cwspokXIls6t\/WSmIAHlgukXFTLxM=",
       "System.Security.Permissions.dll": "sha256-dO87Z5YKm1af7ZrEVxV3adv+QzsPT6E8UhZ8Ika\/7XE=",
       "System.Windows.Extensions.dll": "sha256-q76BRvo\/Y47p9aquhRgtct54B8nwoGMR7xTrTl88s7A=",
@@ -218,16 +222,16 @@
       "netstandard.dll": "sha256-W9cwgVmBZsddVw3WVFMC5Gya92UufvbVTNR4+u7pnR0=",
       "System.Private.CoreLib.dll": "sha256-KVnZkFos\/ML\/3S2isVijfmFZXO4zEQeCga6BZvGdTbY=",
       "Reservas.BD.dll": "sha256-tF\/hLNPY89ElbYK7Ri2SgEMaBmG61iij0QhNQRJqC2k=",
-      "Reservas.Shared.dll": "sha256-NE7402QH00CiKZ+CVHqhb31ZZWbCFzmy0h6iiytBdD4=",
-      "Reservas.Client.dll": "sha256-7epzL5ixM1oyKGFCde0G7r8Fneao\/yavWkaB5dua60U="
+      "Reservas.Shared.dll": "sha256-BpmiWZ\/qx6VEF0xQ3kKUFJcqYpaCY0EgO5W7mHfuL8E=",
+      "Reservas.Client.dll": "sha256-9nvT3gjTT7KwsjjggrVPRZFFBJW1VgHMmXYN2Niz96c="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "Reservas.BD.pdb": "sha256-pwRyUIHfhmXdBd\/8npzu7g0bb1F2q\/5lCd3YKO25Zco=",
-      "Reservas.Shared.pdb": "sha256-3MZmCKxcxucISCxfO8ODNXoh22y5od1rSGP1VlU6iTE=",
-      "Reservas.Client.pdb": "sha256-DlKXeX1zXXfvFuSeM1oNZNKpCgs\/mym9WKZV0WiGxzk="
+      "Reservas.Shared.pdb": "sha256-OA+Xd1+f89HDNpo2UF9klDFGpOlnnx8jIozyXIjdqnI=",
+      "Reservas.Client.pdb": "sha256-SnMHHpRlAR6o7fh7VwWO8pK900ySkOxOqp6PKa911dc="
     },
     "runtime": {
       "dotnet.6.0.4.qv3sgzvyg2.js": "sha256-WYno\/cK5MDsl5yi4T\/\/QgUskbBfhLL77i+c0uKzO9+c=",
